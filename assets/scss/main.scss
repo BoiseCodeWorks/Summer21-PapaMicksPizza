@@ -1,0 +1,49 @@
+@import "./_variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./_overrides.scss";
+@import "./custom.scss";
+@import "./loaders.scss";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $body-bg;
+}
+
+main {
+  flex-grow: 1;
+  background-image: url("../img/SiteBg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-header{
+  min-height: 10vh;
+  font-size: 2em;
+  color: white;
+  text-shadow: black 0px 2px 3px;
+  background: rgba(128, 128, 128, 0.589) url("../img/CardHeader.jpg") ;
+  filter: contrast(50%);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-header h2::after{
+content: inherit;
+position: absolute;
+z-index: 1;
+}
+
+.site-font{
+  font-family: 'Pattaya', sans-serif;
+}
+
+h1.site-font{
+  text-shadow:var(--success) -1px 1px, var(--success) -2px 2px, var(--success) -3px 3px, var(--success) -4px 4px ;
+}
+
+.bg-shade{
+  background: rgba(29, 29, 29, 0.123);
+}
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <title>papamickspizzashop</title>
+</head>
+
+<body>
+    <header>
+        <nav class="row justify-content-center navbar navbar-dark navbar-expand bg-primary text-light m-0">
+            <a class="navbar-brand" href="#">
+                <h1 class="site-font ml-2">Papa Mick's Pizza!</h1>
+            </a>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <!-- Pizza form------- -->
+        <form class="row px-5 py-3 align-items-end" onsubmit="app.pizzasController.createPizza(event)">
+            <div class="col-3">
+                <label for="name" class="text-light">Pizza Name</label>
+                <input required minlength="4" maxlength="15" type="text" name="name" id="" class="form-control"
+                    placeholder="" aria-describedby="helpId">
+            </div>
+            <div class="col-3">
+                <label for="sauce" class="text-light">Pizza Sauce</label>
+                <input required type="text" name="sauce" id="" class="form-control" placeholder=""
+                    aria-describedby="helpId">
+            </div>
+            <div class="col-3">
+                <label for="crust" class="text-light">Pizza Crust</label>
+                <input required type="text" name="crust" id="" class="form-control" placeholder=""
+                    aria-describedby="helpId">
+            </div>
+            <button class=" col-3 btn btn-primary h-50"> Create Pizza</button>
+        </form>
+        <!-- Piiza Form ------- -->
+        <div id="pizzas" class="row justify-content-around">
+            <!-- Pizzas will go here-->
+            <!-- Pizza Template -->
+            <div class="col-3 m-3 bg-light px-0">
+                <div class="bg-dark text-light">
+                    Pizza Name
+                </div>
+                <div class="row justify-content-center py-1 card-body">
+                    <b class="col-12">Piza Fixings:</b>
+                    <ul class="col-12 bg-shade">
+                        <li class="row align-items-center"> Sauce</li>
+                        <li class="row align-items-center"> Crust</li>
+                    </ul>
+                    <b class="col-12">Toppings:</b>
+                    <ul class="col-12 bg-shade">
+                        <li class="row align-items-center">
+                            <div class="col-7">Pepperoni</div>
+                            <div class="col-3">$1.00</div>
+                        </li>
+                        <li class="row align-items-center">
+                            <div class="col-7">Bacon</div>
+                            <div class="col-3">$1.00</div>
+                        </li>
+                    </ul>
+                    <form onsubmit="app.toppingsController.addTopping(event, 'pizzaId')">
+                        <label for="name"></label>
+                        <input type="text" name="name" id="" class="form-control" placeholder=""
+                            aria-describedby="helpId">
+                        <button class="btn btn-primary btn-block"> Add Topping</button>
+                    </form>
+                    <h5>Total: $7.00</h5>
+                    <div title="fulfill order" class="col-12 btn btn-outline-dark"
+                        onclick="app.pizzasController.fulfillOrder('pizzaId')">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Template -->
+
+
+        </div>
+    </main>
+    <footer class="container-fluid bg-dark text-light">
+        <div class="row text-center">
+            <div class="col">
+                <p><small>Made with love by Codeworks</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
